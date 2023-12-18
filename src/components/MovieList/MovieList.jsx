@@ -1,40 +1,49 @@
 import { useMovieContext } from '@/hooks/useMovieContext';
+//import { useWatchListContext } from '@/hooks/useWatchListContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 import { Link } from 'react-router-dom';
 import { FcLike } from 'react-icons/fc';
 import './movieList.css';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 const MovieList = () => {
   const { movies, loading, search } = useMovieContext();
+  //const { watchList } = useWatchListContext();
+  const { userPayload } = useAuthContext();
 
-  // const [position, setPosition] = useState(0); // Position state to keep track of slider movement
+  const [position, setPosition] = useState(0); // Position state to keep track of slider movement
 
-  // const moveSlider = (direction) => {
-  //   const newPosition = direction === 'left' ? position + 1 : position - 1;
-  //   setPosition(newPosition);
-  // };
+  const moveSlider = (direction) => {
+    const newPosition = direction === 'left' ? position + 1 : position - 1;
+    setPosition(newPosition);
+  };
 
   return (
     <div className='container d-flex gap-5 justify-content-start'>
       <div className='row text-center'>
-        <div className='container my-3 watchlist'>
-          {/* <div className='slider-container'>
-            <div
-              className='slider'
-              style={{ transform: `translateX(-${position * 100}%)` }}
-            >
-              <div className='slide'>Slide 1</div>
-              <div className='slide'>Slide 2</div>
-              <div className='slide'>Slide 3</div>
-              <div className='slide'>Slide 4</div>
-              <div className='slide'>Slide 5</div>
-              <div className='slide'>Slide 6</div>
-              <div className='slide'>Slide 7</div>
-              <div className='slide'>Slide 8</div>
+        <div className='container my-3'>
+          {userPayload?.role === 'CUSTOMER' ? (
+            <div className='slider-container'>
+              <div
+                className='slider'
+                style={{ transform: `translateX(-${position * 100}%)` }}
+              >
+                {/* {watchList?.map((movie) => {
+                <div className='slide'>{movie?.movie}</div>;
+              })} */}
+                <div className='slide'>Pelicula 1</div>
+                <div className='slide'>Pelicula 2</div>
+                <div className='slide'>Pelicula 3</div>
+                <div className='slide'>Pelicula 4</div>
+                <div className='slide'>Pelicula 5</div>
+                <div className='slide'>Pelicula 6</div>
+                <div className='slide'>Pelicula 7</div>
+                <div className='slide'>Pelicula 8</div>
+              </div>
+              <button onClick={() => moveSlider('left')}>Previous</button>
+              <button onClick={() => moveSlider('right')}>Next</button>
             </div>
-            <button onClick={() => moveSlider('left')}>Previous</button>
-            <button onClick={() => moveSlider('right')}>Next</button>
-          </div> */}
+          ) : null}
         </div>
         {loading ? (
           <h1>Loading...</h1>

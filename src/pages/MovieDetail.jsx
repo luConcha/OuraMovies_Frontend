@@ -122,7 +122,8 @@ const MovieDetail = () => {
                       />
                       Delete
                     </button>
-                  ) : (
+                  ) : null}
+                  {userPayload?.role === 'CUSTOMER' ? (
                     <>
                       <a href='/'>Add to WatchList</a>
                       <button onClick={incrementLikes}>
@@ -132,7 +133,7 @@ const MovieDetail = () => {
                         {likes}
                       </button>
                     </>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </div>
