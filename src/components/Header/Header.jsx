@@ -1,8 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { useAuthContext } from '@/hooks/useAuthContext';
+import { useMovieContext } from '@/hooks/useMovieContext';
 
 const Header = () => {
-  const { isAuth, logout } = useAuthContext();
+  const { isAuth, logout, userPayload } = useAuthContext();
+  const { setSearch } = useMovieContext();
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -28,26 +34,34 @@ const Header = () => {
               type='search'
               placeholder='Search'
               aria-label='Search'
+              onChange={handleSearch}
             />
-            <button className='btn btn-outline-success' type='submit'>
-              Search
-            </button>
           </form>
         </div>
         <ul className='d-flex justify-content-end navbar-nav me-auto mb-2 mb-lg-0'>
+          {userPayload?.role === 'ADMIN' ? (
+            <li className='nav-item'>
+              <NavLink
+                className='nav-link active'
+                aria-current='page'
+                to='/admin'
+                style={{ color: 'green' }}
+              >
+                Movie Catalog
+              </NavLink>
+            </li>
+          ) : null}
           {isAuth ? (
-            <>
-              <li className='nav-item'>
-                <NavLink
-                  className='nav-link active'
-                  aria-current='page'
-                  to='/login'
-                  onClick={logout}
-                >
-                  Logout
-                </NavLink>
-              </li>
-            </>
+            <li className='nav-item'>
+              <NavLink
+                className='nav-link active'
+                aria-current='page'
+                to='/login'
+                onClick={logout}
+              >
+                Logout
+              </NavLink>
+            </li>
           ) : (
             <>
               <li className='nav-item'>

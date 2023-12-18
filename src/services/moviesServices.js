@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://vast-red-angelfish-kilt.cyclic.app';
+const BASE_URL = 'https://long-ruby-rabbit-coat.cyclic.app';
+//const BASE_URL = 'http://localhost:5000';
 
 axios.interceptors.request.use(
   (config) => {
@@ -17,15 +18,16 @@ axios.interceptors.request.use(
 
 const getAllMovies = () => axios.get(`${BASE_URL}/api/movies`);
 const createMovie = (data) => axios.post(`${BASE_URL}/api/movies`, data);
-const getMovieById = (id) => axios.get(`${BASE_URL}/api/movies/${id}`);
+const getMovieData = (id) => axios.get(`${BASE_URL}/api/movies/${id}`);
 const movieLiked = (id) => axios.put(`${BASE_URL}/api/movies/liked/${id}`);
-const updateMovie = (id) => axios.put(`${BASE_URL}/api/movies/${id}`);
+const updateMovie = (id, data) =>
+  axios.put(`${BASE_URL}/api/movies/${id}`, data);
 const deleteMovie = (id) => axios.delete(`${BASE_URL}/api/movies/${id}`);
 
 export {
   getAllMovies,
   createMovie,
-  getMovieById,
+  getMovieData,
   movieLiked,
   updateMovie,
   deleteMovie,

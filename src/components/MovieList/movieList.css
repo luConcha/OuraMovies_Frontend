@@ -1,0 +1,22 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 25%; /* 4 columns in the slider */
+  width: 100%;
+  box-sizing: border-box;
+  /* Additional styling for your slides */
+}
+
+/* Style for the buttons */
+button {
+  margin: 5px;
+}

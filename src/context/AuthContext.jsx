@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
 
   const login = (token) => {
     localStorage.setItem('token', token);
+    console.log(token);
     const decodedPayload = jwtDecode(token);
     setUserPayload(decodedPayload);
     setIsAuth(true);
