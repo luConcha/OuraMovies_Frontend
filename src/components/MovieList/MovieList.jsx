@@ -26,19 +26,125 @@ const MovieList = () => {
             <div className='slider-container'>
               <div
                 className='slider'
-                style={{ transform: `translateX(-${position * 100}%)` }}
+                style={{
+                  transform: `translateX(-${position * 100}%)`,
+                }}
               >
                 {/* {watchList?.map((movie) => {
                 <div className='slide'>{movie?.movie}</div>;
               })} */}
-                <div className='slide'>Pelicula 1</div>
-                <div className='slide'>Pelicula 2</div>
-                <div className='slide'>Pelicula 3</div>
-                <div className='slide'>Pelicula 4</div>
-                <div className='slide'>Pelicula 5</div>
-                <div className='slide'>Pelicula 6</div>
-                <div className='slide'>Pelicula 7</div>
-                <div className='slide'>Pelicula 8</div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1Xgjl22MkAZQUavvOeBqRehrvqO.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tPyj6Gii1HrnzCbJXEF7JdSFkQ8.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/mXLOHHc1Zeuwsl4xYKjKh2280oL.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oE7xtGDqZnr7tFHfwb8oM9iRW6H.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aTvePCU7exLepwg5hWySjwxojQK.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1Xgjl22MkAZQUavvOeBqRehrvqO.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aQPeznSu7XDTrrdCtT5eLiu52Yu.jpg'
+                    alt=''
+                  />
+                </div>
+                <div className='slide'>
+                  <img
+                    style={{
+                      width: '170px',
+                      height: '240px',
+                      marginTop: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '25px',
+                      cursor: 'pointer',
+                    }}
+                    src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg'
+                    alt=''
+                  />
+                </div>
               </div>
               <button onClick={() => moveSlider('left')}>Previous</button>
               <button onClick={() => moveSlider('right')}>Next</button>

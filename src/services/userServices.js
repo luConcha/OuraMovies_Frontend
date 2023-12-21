@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://long-ruby-rabbit-coat.cyclic.app';
+const BASE_URL = 'https://erin-courageous-duck.cyclic.app';
 //const BASE_URL = 'http://localhost:5000';
 
 const registerUserService = (data) =>
